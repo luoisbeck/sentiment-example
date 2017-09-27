@@ -4,7 +4,10 @@ from sklearn import svm
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 # file_list = ['amazon_cells_labelled.txt', 'imdb_labelled.txt', 'yelp_labelled.txt']
-hist_data = np.genfromtxt('amazon_cells_labelled.txt', delimiter='\t', dtype=None)
+hist_data_amazon = np.genfromtxt('amazon_cells_labelled.txt', delimiter='\t', dtype=None)
+hist_data_yelp = np.genfromtxt('yelp_labelled.txt', delimiter='\t', dtype=None)
+
+hist_data = np.concatenate((hist_data_amazon, hist_data_yelp))
 
 # TODO: Parse imdb and yelp files
 
